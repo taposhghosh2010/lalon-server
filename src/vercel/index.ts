@@ -17,6 +17,7 @@ export default async function handler(req: Request, res: Response) {
         }
     }
 
+    res.status(200).json({ message: "Hello from Vercel serverless!" });
     // Now pass the request to the Express app
     app(req, res);  // Vercel-specific, but make sure app is set up correctly
 }
