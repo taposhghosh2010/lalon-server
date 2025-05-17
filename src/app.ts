@@ -23,15 +23,6 @@ app.use(
   })
 );
 
-// // Apply CORS configuration
-// app.use(
-//   cors({
-//     origin: ['http://localhost:3000', 'http://localhost:3001'],
-//     credentials: true,
-//   }),
-// );
-
-
 // interface CorsOptions {
 //   origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => void;
 //   credentials: boolean;
@@ -63,11 +54,13 @@ app.use("/api/v1", routes);
 // Test endpoint to verify server is working
 app.get("/test", async (req: Request, res: Response) => {
   res.status(200).json({
-    message: "Server working....!",
+    message: "Lalon Store Server is running..!",
   });
 });
 app.get('/', (req, res) => {
-  res.send('Lalon Store Server is running..!')
+  res.status(200).json({
+    message: "Lalon Store Server is running..!",
+  });
 })
 
 // Global error handler middleware
@@ -85,7 +78,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
       },
     ],
   });
-  next();
 });
 
 // Graceful shutdown on SIGTERM signal
