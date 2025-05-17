@@ -3,14 +3,14 @@
     "buildCommand": "pnpm run build",
     "builds": [
         {
-            "src" : "dist/vercel/index.js",
+            "src" : "src/vercel/index.ts",
             "use": "@vercel/node"
         }
     ],
     "routes" : [
         {
             "src": "/(.*)",
-            "dest": "dist/vercel/index.js"
+            "dest": "src/vercel/index.ts"
         }
     ],
     "outputDirectory": "dist"
